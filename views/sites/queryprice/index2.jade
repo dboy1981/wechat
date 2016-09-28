@@ -1,0 +1,130 @@
+doctype html
+html(lang='en')
+    head
+        title 10秒估算装修报价
+        meta(charset='utf-8')
+        meta(name='format-detection', content='email=no, address=no, telephone=no')
+        meta(name='keywords', content='10秒估算装修报价')
+        meta(name='description', content='10秒估算装修报价，给你专业，公正，透明的装修报价，60项详细清单，半包，人工，主材，项目一清二楚.')
+        meta(name='viewport', content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui')
+        link(rel='stylesheet', type='text/css', href='http://games.ehome100.com/stylesheets/head.css?rand=20160925')
+        link(rel='stylesheet', type='text/css', href='http://games.ehome100.com/stylesheets/mobiscroll.min.css?rand=20160308')
+        link(rel='stylesheet', type='text/css', href='http://games.ehome100.com/stylesheets/zx-bj.css')
+        script(type='text/javascript', src='http://games.ehome100.com/jquery/jquery.min.js')
+        script(type='text/javascript', src='http://games.ehome100.com/javascripts/zepto.min.js')
+    body
+        header.newHeader(class='##fix_header##')
+            a.backtohis.pl(href='javascript:history.back(-1);') 返回
+            h2.header_title
+                span 报价计算器
+        #load_div.popup-new
+        #load_icon.loading-common
+        .popmask
+        #free.banner
+            img(src='http://games.ehome100.com/images/001.jpg', style='display: block;border:none;')
+        .free
+            // 新增 start
+            // 计算器
+            dl.p2
+                dd.city
+                    span(style='padding-left: 0.12rem;') 我家的区域：
+                    ul#demo_treelist(data-areaflag='shanghai', data-province='上海', data-city='上海')
+                        // json 城市
+                        li(value='上海')
+                            | 上海
+                            ul
+                                li(value='徐汇区', data-areapy='shanghai') 徐汇区
+                                li(value='普陀区', data-areapy='shanghai') 普陀区
+                                li(value='长宁区', data-areapy='shanghai') 长宁区
+                                li(value='静安区', data-areapy='shanghai') 静安区
+                                li(value='杨浦区', data-areapy='shanghai') 杨浦区
+                                li(value='卢湾区', data-areapy='shanghai') 卢湾区
+                                li(value='黄浦区', data-areapy='shanghai') 黄浦区
+                                li(value='虹口区', data-areapy='shanghai') 虹口区
+                                li(value='嘉定区', data-areapy='shanghai') 嘉定区
+                                li(value='闵行区', data-areapy='shanghai') 闵行区
+                                li(value='浦东区', data-areapy='shanghai') 浦东区
+                                li(value='宝山区', data-areapy='shanghai') 宝山区
+                                li(value='青浦区', data-areapy='shanghai') 青浦区
+                                li(value='奉贤区', data-areapy='shanghai') 奉贤区
+                                li(value='金山区', data-areapy='shanghai') 金山区
+                                li(value='崇明区', data-areapy='shanghai') 崇明区
+                                li(value='松江区', data-areapy='shanghai') 松江区
+                    i.city_down
+                dd
+                    span(style='padding-left: 0.12rem;') 我家的面积：
+                    input#pm(type='number', name='total_area2', value='90', style='width:.8rem;border:none;', onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^0-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}", onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^0-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}")
+                    |       m²
+                    #ma.p2-add +
+                    #ms.p2-add -
+            dl.p2-new
+                dd
+                    input(type='hidden', name='ws', value='2')
+                    input#shi.ps(type='number', name='shi1', value='2', style='width:.4rem;border:none;', onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^0-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}", onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^0-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}")
+                    span 室
+                    .p2-add.add +
+                    .p2-add.minus -
+                dd(style='float:right;')
+                    input(type='hidden', name='kt', value='1')
+                    input#ting.pt(type='number', name='ting1', value='1', style='width:.4rem;border:none;', onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^0-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}", onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^0-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}")
+                    span 厅
+                    .p2-add.add +
+                    .p2-add.minus -
+                dd
+                    input(type='hidden', name='cf', value='1')
+                    input#chu.pc(type='number', name='chu1', value='1', style='width:.4rem;border:none;', onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^0-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}", onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^0-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}")
+                    span 厨
+                    .p2-add.add +
+                    .p2-add.minus -
+                dd(style='float:right;')
+                    input(type='hidden', name='wsj', value='1')
+                    input#wei.pw(type='number', name='wei1', value='1', style='width:.4rem;border:none;', onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^0-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}", onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^0-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}")
+                    span 卫
+                    #pwa.p2-add.add +
+                    #pws.p2-add.minus -
+                dd(style='width: 100%;text-indent: 0.1rem;	line-height: .33rem;')
+                    input#user(style='width: 95%;', type='text', placeholder='请输入您的姓名', maxlength='11')
+                dd(style='width: 100%;text-indent: 0.1rem;	line-height: .33rem;')
+                    input#mobile(style='width: 95%;', type='tel', placeholder='输入手机号码，免费获取报价', maxlength='11')
+                #phoneerr(style='color:red')
+            dl.p2
+                dt
+                    a#sub_js(href='javascript:void(0);', onclick='join();return false;') 1秒钟计算报价
+        .budget-pic
+            img(src='http://games.ehome100.com/images/002.jpg', style='display: block;border:none;')
+        // 弹层1
+        .zxbj-pop.zxbj-pop1
+            h3.title 马上拿报价
+            a.close.close1(href='javascript:;')
+            p.pop-parBtn
+                a#assign_.zxbj-freeBtn(tjjj='m_zxbj_sign', href='javascript:;') 查看报价
+            .pop-numpop
+                | 今日已有
+                em 5382
+                |  人成功获取装修预算
+        // 弹层2
+        .zxbj-pop.zxbj-pop2
+            h3.title 立即验证 享装修特权
+            a.close.close2(href='javascript:;')
+            h3.samll-title.close-title
+                p.pt1
+                    | 免费
+                    strong 一对一
+                    | 装修管家服务
+                p.pt2
+                    | 免费获取
+                    strong 2-3套
+                    | 设计方案
+                p.pt3
+                    | 免费
+                    strong 资深监理
+                    | 5大节点验收
+            p.pop-parBtn
+                a#assign_re.zxbj-freeBtn(tjjj='m_zxbj_sign2', href='javascript:;') 返回验证手机
+            .pop-numpop
+                | 今日已有
+                em 5382
+                |  人成功获取装修预算
+        script(type='text/javascript', src='http://games.ehome100.com/javascripts/mobiscroll.min.js')
+        script(type='text/javascript', src='http://games.ehome100.com/javascripts/zxbj-up2.js')
+        script(type='text/javascript', src='http://games.ehome100.com/javascripts/queryprice.js')

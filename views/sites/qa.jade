@@ -1,0 +1,81 @@
+extends ../layout
+block header
+   meta(name='description', content='北京奥运会李宁用哪只手点燃主火炬的？')
+   script(src='/jquery/jquery.min.js')
+   script(src='/javascripts/underscore-min.js')
+   script(src='/javascripts/questions.js')
+   script(src='/javascripts/qa.js')
+
+block content
+   //#userinfo
+   //   span
+   //      img(src=user.avatar width='20px')
+   //   span= user.name
+   //   if(user.points)
+   //      span= user.points.game1
+   //   else
+   //      span 0
+   //#controls
+   //   a(href='javascript:void(0);' onclick='getRank();') Rank
+   //div(data-rankcontainer)
+   section#welcome.page1.pub_wrap
+      .h1titlebg.animated.zoomIn
+      h1.t1.animated.zoomInDown
+      .starbt.animated.lightSpeedIn
+         a(href='javascript:void(0);' onclick='start();', title='开始答题')
+            img(src='/images/ksdt.png', alt='')
+         a(href='javascript:void(0);' onclick='awards();', title='查看奖励')
+            img(src='/images/ckjl.png', alt='')
+   // 答题开始
+   section#gamestart.page2.pub_wrap(style='display:none;')
+      .ttop
+         ul
+            li 第<span data-qno></span>题
+            li 共<span data-qtotal></span>题
+            li 剩余：<span data-cd></span>秒
+      .txt1(data-qacontainer)
+   // 答题开始END
+
+   // 答题成功
+   section#gameover.page3.pub_wrap(style='display:none;')
+      .h3titlebg.animated.zoomIn
+      // 答题成功
+      h1#success.t3.animated.zoomInDown(style='display:none;')
+      // 答题成功
+      // 答题失败
+      h1#fail.t4.animated.zoomInDown(style='display:none;')
+      // 答题失败
+      p.tte 我在奥运大玩家挑战中坚持了 <span data-totaltime></span> 秒， 答对 <span data-totalq></span> 题，得到 <span data-score></span> 分
+      .starbt3.animated.lightSpeedIn
+        a(href='javascript:void(0);', onclick='showShare();')
+          img(src='images/fxdt.png', alt='')
+        a(href='javascript:void(0);', onclick='showPhone();',id='tjbtn')
+          img(src='images/tjbt.png', alt='')
+       section#phonebox.container(style='display:none;')
+           .login
+               a(href='javascript:void(0);', onclick='hiddePhone();') &times;
+               form#phoneform
+                   p
+                       input(type='text', id='name', value='', placeholder='您的姓名')
+                   p
+                       input(type='text', id='phone', value='', placeholder='联系电话')
+                   p
+                       input(type='text', id='address', value='', placeholder='收货地址')
+                   p#phoneerr(style="color:red")
+                   p.submit
+                       input(type='button', name='commit', value='确 定', onclick='setPhone()')
+      // 微信分享提示
+      .shareImgs(style='display: none;')
+      .maskBlacl(style='display: none;')
+      // 微信分享提示END
+    // 答题成功END
+   section#awards.page4.pub_wrap(style='display:none;')
+      .h4titlebg.animated.zoomIn
+      .pp4t
+         p.p4t 谁是大玩家？答题见高下
+         p.p4tt 答对所有10题的用户且用时最少的前10名即可获得正版奥运吉祥物维尼修斯，绝对巴西！
+      .starbt.starbt4.animated.lightSpeedIn
+            a(href='javascript:void(0);' onclick='start();', title='开始答题')
+                img(src='images/ksdt.png', alt='')
+
+

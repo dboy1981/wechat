@@ -1,0 +1,9 @@
+@charset "utf-8";
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}:focus{outline:0;}table{border-collapse:collapse;border-spacing:0;}caption,th,td{text-align:left;font-weight:normal;}strong{font-weight:bold;}em{font-style:italic;}
+body { background:#f8f8f8;font: 24px/24px 微软雅黑, Arial, Helvetica, sans-serif ; color:#333333;}
+.mainContent { letter-spacing: 3px;	max-width:640px; margin:30px auto; padding:25px; text-align:center;}
+header h1 { font-size:48px;line-height:2.5;}
+.mj { font-size:32px;letter-spacing: 5px; color:#666;}.mj span { color:#333; }
+article {line-height:1.5;}article h2 { margin-top:3rem; font-size:40px}article p { font-size:32px; color:#666;}.jg { color:#f80231; line-height:2; font-size:50px; font-weight:800}.jg span { font-size:30px;}
+.content { background:#fff;  border:2px solid #E0E0E0; margin-top:50px;	border-radius: 10px;}hr {	width: 80%;border: 1px dotted #b9b9b9;	margin-bottom: 40px;}.ptext { font-size:22px; text-align:left; line-height:1.6; margin-top:30px; margin-left:10px;}
+

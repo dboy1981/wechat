@@ -1,0 +1,52 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title 装修报价
+    link(rel='stylesheet', type='text/css', href='http://games.ehome100.com/stylesheets/bjstyle.css?rand=20160925')
+    body
+        section.mainContent
+            header.toptitle
+                h1 您的装修预估价
+                p.mj
+                    | 面积：
+                    span #{area}㎡
+                    |   房型：
+                    span #{room}室#{hall}厅#{kitchen}厨#{bathroom}卫
+            section.content
+                article
+                    h2 装修总价
+                    p 半包+主材
+                    p.jg
+                        span ¥
+                        | #{total}元
+                    hr
+                article
+                    h2 半包价格
+                    p 辅材+工人费
+                    p.jg
+                        span ¥
+                        | #{half}元
+                    hr
+                article
+                    h2 主材价格
+                    p 瓷砖、套装门、地板、橱柜等
+                    p.jg
+                        span ¥
+                        | #{material}元
+                    hr
+            .ptext
+                p *装修管家将在24小时内给您回电，免费提供装修咨询服务
+                p *因材料品牌及工程量不同，具体报价以量房实测为准
+        script.
+            if (/Android (\\d+\.\d+)/.test(navigator.userAgent)) {
+                var version = parseFloat(RegExp.$1);
+                if (version > 2.3) {
+                    var phoneScale = parseInt(window.screen.width) / 640;
+                    document.write('<meta name="viewport" content="width=640,minimum-scale=' + phoneScale + ',maximum-scale=' + phoneScale + ',target-densitydpi=device-dpi">');
+                } else {
+                    document.write('<meta name="viewport" content="width=640,target-densitydpi=device-dpi">');
+                }
+            } else {
+                document.write('<meta name="viewport" content="width=640,user-scalable=no">');
+            }

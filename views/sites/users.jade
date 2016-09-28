@@ -1,0 +1,61 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta#WebViewport(name='viewport', content='width=620px,initial-scale=1,target-densitydpi=device-dpi,minimum-scale=0.5,maximum-scale=1,user-scalable=1')
+        meta(name='apple-mobile-web-app-capable', content='yes')
+        meta(name='apple-mobile-web-app-status-bar-style', content='black')
+        meta(name='format-detection', content='telephone=no')
+        title users
+        link(rel='stylesheet', type='text/css', media='all', href='/bootstrap/bootstrap.min.css')
+
+    body
+        if title == 'gameslog'
+            #board.
+                参与活动总数：#{total}
+            table.table.table-striped
+                tr
+                    th 手机
+                    th 姓名
+                    th 时间
+                each val in users
+                    tr
+                        td!=val.phone
+                        td!=val.username
+                        td!=moment(val.create_at).format('LLLL')
+            nav
+                ul.pagination
+                    - if (pageindex == 1)
+                        li.disabled
+                            a(href='?page=1') &laquo;
+                    - else
+                        li
+                            a(href='?page=1') &laquo;
+                    - for (var x = 1; x <= totalpages; x++)
+                        - if (pageindex == x)
+                            li.active
+                                a(href='?page=#{x}')=x
+                        - else
+                            li
+                                a(href='?page=#{x}')=x
+                    li
+                        a(href='?page=#{totalpages}') &raquo;
+        else
+            #board.
+                参与活动总数：#{total}   参与抽奖总数：#{suctotal}
+            table.table.table-striped
+                tr
+                    th 昵称
+                    th 手机
+                    th 姓名
+                    th 地址
+                    th 用时
+                each val in users
+                    tr
+                        td!=val.name
+                        td!=val.phone || ''
+                        td!=val.truename || ''
+                        td!=val.address || ''
+                        td!=val.totaltime || ''
+
+
